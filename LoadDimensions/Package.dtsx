@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{950A06A5-696E-43E8-A9D6-FE5D05B289A8}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{4A7F881F-D4BA-4FE9-B2C8-37F98DAB6E98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1200,179 +1200,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           version="1">
           <components>
             <component
-              refId="Package\Load Customers\Comando de OLE DB"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
-              name="Comando de OLE DB"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadCustomers] ?,?,?,?,?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Customers\Comando de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-                  errorOrTruncationOperation="Ejecución de comando"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de comando de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[CustomerID]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="CustomerID"
-                      externalMetadataColumnId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CustomerID]"
-                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
-                    <inputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[CompanyName]"
-                      cachedDataType="wstr"
-                      cachedLength="40"
-                      cachedName="CompanyName"
-                      externalMetadataColumnId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
-                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
-                    <inputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
-                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[Country]" />
-                    <inputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Region]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Region"
-                      externalMetadataColumnId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
-                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[Region]" />
-                    <inputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[City]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
-                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[City]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CustomerID]"
-                      dataType="wstr"
-                      length="5"
-                      name="@CustomerID">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
-                      dataType="wstr"
-                      length="40"
-                      name="@CompanyName">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
-                      dataType="wstr"
-                      length="15"
-                      name="@Country">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
-                      dataType="wstr"
-                      length="15"
-                      name="@Region">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
-                      dataType="wstr"
-                      length="15"
-                      name="@City">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
-                  exclusionGroup="1"
-                  name="Salida de comando de OLE DB"
-                  synchronousInputId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de comando de OLE DB"
-                  synchronousInputId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Customers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Load Customers\Get Customers Data"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
@@ -1565,11 +1392,184 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load Customers\Load Customers Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Load Customers Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadCustomers] ?,?,?,?,?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customers\Load Customers Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CustomerID]"
+                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].Columns[CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="CompanyName"
+                      externalMetadataColumnId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
+                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
+                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
+                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
+                      lineageId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="@CustomerID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
+                      dataType="wstr"
+                      length="40"
+                      name="@CompanyName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="@Country">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="@Region">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
+                      dataType="wstr"
+                      length="15"
+                      name="@City">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customers\Load Customers Data.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Customers\Load Customers Data.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customers\Load Customers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Load Customers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customers\Load Customers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customers\Load Customers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load Customers.Paths[Salida de origen de OLE DB]"
-              endId="Package\Load Customers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              endId="Package\Load Customers\Load Customers Data.Inputs[Entrada de comando de OLE DB]"
               name="Salida de origen de OLE DB"
               startId="Package\Load Customers\Get Customers Data.Outputs[Salida de origen de OLE DB]" />
           </paths>
@@ -1590,196 +1590,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Load Employees\Comando de OLE DB"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
-              name="Comando de OLE DB"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadEmployees]  ?,?,?,?,?,?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Employees\Comando de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-                  errorOrTruncationOperation="Ejecución de comando"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de comando de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Country]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[Country]" />
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Region]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Region"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[Region]" />
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[EmployeeID]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeID"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@EmployeeID]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]" />
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[FirstName]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="FirstName"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@FirstName]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[LastName]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="LastName"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@LastName]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
-                    <inputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[City]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
-                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[City]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
-                      dataType="wstr"
-                      length="15"
-                      name="@Country">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
-                      dataType="wstr"
-                      length="15"
-                      name="@Region">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@EmployeeID]"
-                      dataType="i4"
-                      name="@EmployeeID">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@FirstName]"
-                      dataType="wstr"
-                      length="10"
-                      name="@FirstName">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@LastName]"
-                      dataType="wstr"
-                      length="20"
-                      name="@LastName">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
-                      dataType="wstr"
-                      length="15"
-                      name="@City">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
-                  exclusionGroup="1"
-                  name="Salida de comando de OLE DB"
-                  synchronousInputId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de comando de OLE DB"
-                  synchronousInputId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Employees\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Load Employees\Get Employees Data"
               componentClassID="Microsoft.OLEDBSource"
@@ -1991,11 +1801,201 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load Employees\Load Employees Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Load Employees Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadEmployees]  ?,?,?,?,?,?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Employees\Load Employees Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@EmployeeID]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@FirstName]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@LastName]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
+                      lineageId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="@Country">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="@Region">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@EmployeeID]"
+                      dataType="i4"
+                      name="@EmployeeID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@FirstName]"
+                      dataType="wstr"
+                      length="10"
+                      name="@FirstName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@LastName]"
+                      dataType="wstr"
+                      length="20"
+                      name="@LastName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@City]"
+                      dataType="wstr"
+                      length="15"
+                      name="@City">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Load Employees Data.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Load Employees Data.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Load Employees Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Load Employees Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Employees\Load Employees Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Load Employees Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load Employees.Paths[Salida de origen de OLE DB]"
-              endId="Package\Load Employees\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              endId="Package\Load Employees\Load Employees Data.Inputs[Entrada de comando de OLE DB]"
               name="Salida de origen de OLE DB"
               startId="Package\Load Employees\Get Employees Data.Outputs[Salida de origen de OLE DB]" />
           </paths>
@@ -2016,154 +2016,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Load Products\Comando de OLE DB"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
-              name="Comando de OLE DB"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadProducts]  ?,?,?,?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Products\Comando de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-                  errorOrTruncationOperation="Ejecución de comando"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de comando de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[ProductID]"
-                      cachedDataType="i4"
-                      cachedName="ProductID"
-                      externalMetadataColumnId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductID]"
-                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
-                    <inputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[ProductName]"
-                      cachedDataType="wstr"
-                      cachedLength="40"
-                      cachedName="ProductName"
-                      externalMetadataColumnId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductName]"
-                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[ProductName]" />
-                    <inputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[UnitPrice]"
-                      cachedDataType="cy"
-                      cachedName="UnitPrice"
-                      externalMetadataColumnId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@UnitPrice]"
-                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
-                    <inputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Discontinued]"
-                      cachedDataType="bool"
-                      cachedName="Discontinued"
-                      externalMetadataColumnId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Discontinued]"
-                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[Discontinued]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductID]"
-                      dataType="i4"
-                      name="@ProductID">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductName]"
-                      dataType="wstr"
-                      length="40"
-                      name="@ProductName">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@UnitPrice]"
-                      dataType="cy"
-                      name="@UnitPrice">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Discontinued]"
-                      dataType="bool"
-                      name="@Discontinued">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Products\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
-                  exclusionGroup="1"
-                  name="Salida de comando de OLE DB"
-                  synchronousInputId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load Products\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de comando de OLE DB"
-                  synchronousInputId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Products\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Products\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Products\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Load Products\Get Products Data"
               componentClassID="Microsoft.OLEDBSource"
@@ -2327,11 +2179,159 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load Products\Load Products Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Load Products Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Exec [dbo].[LoadProducts]  ?,?,?,?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Products\Load Products Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductID]"
+                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductName]"
+                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@UnitPrice]"
+                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].Columns[Discontinued]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      externalMetadataColumnId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Discontinued]"
+                      lineageId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB].Columns[Discontinued]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductID]"
+                      dataType="i4"
+                      name="@ProductID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="@ProductName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@UnitPrice]"
+                      dataType="cy"
+                      name="@UnitPrice">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@Discontinued]"
+                      dataType="bool"
+                      name="@Discontinued">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Products\Load Products Data.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Products\Load Products Data.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Products\Load Products Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Products\Load Products Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Products\Load Products Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Products\Load Products Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load Products.Paths[Salida de origen de OLE DB]"
-              endId="Package\Load Products\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              endId="Package\Load Products\Load Products Data.Inputs[Entrada de comando de OLE DB]"
               name="Salida de origen de OLE DB"
               startId="Package\Load Products\Get Products Data.Outputs[Salida de origen de OLE DB]" />
           </paths>
@@ -2352,120 +2352,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Load Shippers\Comando de OLE DB"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
-              name="Comando de OLE DB"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Comando SQL para ejecutar."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC [dbo].[LoadShippers] ?,?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Shippers\Comando de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
-                  errorOrTruncationOperation="Ejecución de comando"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de comando de OLE DB">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[ShipperID]"
-                      cachedDataType="i4"
-                      cachedName="ShipperID"
-                      externalMetadataColumnId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ShipperID]"
-                      lineageId="Package\Load Shippers\Get Shippers Data.Outputs[Salida de origen de OLE DB].Columns[ShipperID]" />
-                    <inputColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[CompanyName]"
-                      cachedDataType="wstr"
-                      cachedLength="40"
-                      cachedName="CompanyName"
-                      externalMetadataColumnId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
-                      lineageId="Package\Load Shippers\Get Shippers Data.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ShipperID]"
-                      dataType="i4"
-                      name="@ShipperID">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
-                      dataType="wstr"
-                      length="40"
-                      name="@CompanyName">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
-                  exclusionGroup="1"
-                  name="Salida de comando de OLE DB"
-                  synchronousInputId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de comando de OLE DB"
-                  synchronousInputId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Shippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Load Shippers\Get Shippers Data"
               componentClassID="Microsoft.OLEDBSource"
@@ -2593,11 +2479,125 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load Shippers\Load Shippers Data"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Load Shippers Data"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC [dbo].[LoadShippers] ?,?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Shippers\Load Shippers Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.DWHNorthwindOrders]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].Columns[ShipperID]"
+                      cachedDataType="i4"
+                      cachedName="ShipperID"
+                      externalMetadataColumnId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ShipperID]"
+                      lineageId="Package\Load Shippers\Get Shippers Data.Outputs[Salida de origen de OLE DB].Columns[ShipperID]" />
+                    <inputColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].Columns[CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="CompanyName"
+                      externalMetadataColumnId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
+                      lineageId="Package\Load Shippers\Get Shippers Data.Outputs[Salida de origen de OLE DB].Columns[CompanyName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ShipperID]"
+                      dataType="i4"
+                      name="@ShipperID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB].ExternalColumns[@CompanyName]"
+                      dataType="wstr"
+                      length="40"
+                      name="@CompanyName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Shippers\Load Shippers Data.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load Shippers.Paths[Salida de origen de OLE DB]"
-              endId="Package\Load Shippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              endId="Package\Load Shippers\Load Shippers Data.Inputs[Entrada de comando de OLE DB]"
               name="Salida de origen de OLE DB"
               startId="Package\Load Shippers\Get Shippers Data.Outputs[Salida de origen de OLE DB]" />
           </paths>
@@ -2616,7 +2616,1088 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Time\Get Time Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Get Time Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[ViewTime]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Time\Get Time Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JUNTANC.Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JUNTANC.Northwind]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB].Columns[DateValue]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB].ExternalColumns[DateValue]"
+                      lineageId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB].Columns[DateValue]"
+                      name="DateValue"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB].ExternalColumns[DateValue]"
+                      dataType="dbDate"
+                      name="DateValue" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[DateValue]"
+                      dataType="dbDate"
+                      lineageId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[DateValue]"
+                      name="DateValue" />
+                    <outputColumn
+                      refId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Time\Get Time Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Time\Load Time Data"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Load Time Data"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public String MyCon
+    {
+        get
+        {
+            return (String)(ParentComponent.ReadOnlyVariables["MyCon"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+
+        try
+        {
+            DateTime date;
+            date = Row.DateValue;
+
+            LoadTime(date).GetAwaiter().GetResult();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error procesando la fila de fecha: {ex.Message}");
+        }
+    }
+
+
+
+    public async Task LoadTime(DateTime date)
+    {
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(this.Variables.MyCon))
+            {
+                using (SqlCommand command = new SqlCommand("dbo.LoadTime", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    int timeKey = int.Parse(date.ToString("yyyyMMdd"));
+                    string dayOfWeek = date.DayOfWeek.ToString();
+
+                    command.Parameters.AddWithValue("@FullDate", date);
+                    command.Parameters.AddWithValue("@Year", date.Year);
+                    command.Parameters.AddWithValue("@Month", date.Month);
+                    command.Parameters.AddWithValue("@Day", date.Day);
+
+                    await connection.OpenAsync();
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al cargar fecha {date.ToShortDateString()}: {ex.Message}");
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public DateTime DateValue
+    {
+        get
+        {
+            return Buffer.GetDate(BufferColumnIndexes[0]);
+        }
+    }
+    public bool DateValue_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Settings.get_Default():SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Sett" +
+    "ings")]
+
+namespace SC_51233fa9059f40d7a4fb5b09968f7b24.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_51233fa9059f40d7a4fb5b09968f7b24.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8506B0B2-F712-4086-A744-105EE266CBB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_51233fa9059f40d7a4fb5b09968f7b24</RootNamespace>
+    <AssemblyName>SC_51233fa9059f40d7a4fb5b09968f7b24</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_51233fa9059f40d7a4fb5b09968f7b24</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_51233fa9059f40d7a4fb5b09968f7b24</msb:DisplayName>
+    <msb:ProjectId>{152CA752-BC01-4D09-B5C5-C0A8921C918C}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_51233fa9059f40d7a4fb5b09968f7b24.csproj" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_51233fa9059f40d7a4fb5b09968f7b24")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_51233fa9059f40d7a4fb5b09968f7b24")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_51233fa9059f40d7a4fb5b09968f7b24.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_51233fa9059f40d7a4fb5b09968f7b24.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_51233fa9059f40d7a4fb5b09968f7b24.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAD8OkGgAAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAljwA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEQ8AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAnBwAAAAgAAAAHgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAgAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB4
+PAAAAAAAAEgAAAACAAUARCUAAEgWAAABAAAAAAAAAIw7AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBQAAAoqHgIoFQAACiobMAIANgAAAAEAABEDbwcAAAYK
+AgYoBAAABm8WAAAKCxIBKBcAAAreGAxyAQAAcAhvGAAACigZAAAKKBoAAAreACoAAAEQAAAAAAAA
+HR0AGBAAAAETMAIAPwAAAAIAABESACgbAAAKfQkAAAQSAAJ9CgAABBIAA30LAAAEEgAVfQgAAAQS
+AHwJAAAEEgAoAQAAKxIAfAkAAAQoHQAACioeAigLAAAGKioCAwQFKB4AAAoqUgJ7HwAACgJ7IAAA
+ChaUbyEAAAoqIgIWKCIAAAoqHgIoIwAACioeAigkAAAKKn4CKCUAAAoCAnMPAAAGfQEAAAQCAnMQ
+AAAGfQIAAAQqkgRySQAAcBpvJgAACiwVAgUCAygnAAAKDgRzBgAABm8NAAAGKkorBwIDbw4AAAYD
+bwkAAAYt8SoGKjoCKCgAAAoCA30DAAAEKjoCKCgAAAoCA30EAAAEKpYCewQAAARvKQAACnJZAABw
+byoAAAooKwAACm8sAAAKdCgAAAEqHgIoKAAACiqufgUAAAQtHnJlAABw0AcAAAIoLQAACm8uAAAK
+cy8AAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAigwAAAKKi5zFwAABoAHAAAE
+KhswBACGAgAAAwAAEQJ7CAAABAoCewoAAAQLBhcmJgAGFzYWAgd7AgAABG8RAAAGczEAAAp9DAAA
+BAAGFzYWAnLXAABwAnsMAAAEczIAAAp9DQAABAAGORMBAAAGFztuAQAAAnsNAAAEGm8zAAAKAnwL
+AAAEcvEAAHAoNAAACig1AAAKJgJ8CwAABCg2AAAKDBIC/hYXAAABbzcAAAomAnsNAAAEbzgAAApy
+AwEAcAJ7CwAABIwOAAABbzkAAAomAnsNAAAEbzgAAApyFwEAcAJ8CwAABCg6AAAKjDMAAAFvOQAA
+CiYCew0AAARvOAAACnIjAQBwAnwLAAAEKDsAAAqMMwAAAW85AAAKJgJ7DQAABG84AAAKcjEBAHAC
+fAsAAAQoPAAACowzAAABbzkAAAomAnsMAAAEbz0AAApvFgAACg0SAyg+AAAKLT8CFiUKfQgAAAQC
+CX0OAAAEAnwJAAAEEgMCKAIAACvdIwEAAAJ7DgAABA0CfA4AAAT+FQ8AAAECFSUKfQgAAAQSAygX
+AAAKAnsNAAAEb0AAAApvQQAAChMEEgQoQgAACi1BAhclCn0IAAAEAhEEfQ8AAAQCfAkAAAQSBAIo
+AwAAK93BAAAAAnsPAAAEEwQCfA8AAAT+FQIAABsCFSUKfQgAAAQSBChDAAAKJt4YBhYvEwJ7DQAA
+BCwLAnsNAAAEb0QAAArcAhR9DQAABN4YBhYvEwJ7DAAABCwLAnsMAAAEb0QAAArcAhR9DAAABN4q
+EwVyOwEAcAJ8CwAABChFAAAKcmkBAHARBW8YAAAKKEYAAAooGgAACt4A3hkTBgIf/n0IAAAEAnwJ
+AAAEEQYoRwAACt4TAh/+fQgAAAQCfAkAAAQoSAAACioAAEFkAAACAAAASQAAAKIBAADrAQAAGAAA
+AAAAAAACAAAALgAAAN4BAAAMAgAAGAAAAAAAAAAAAAAAEwAAABoCAAAtAgAAKgAAABAAAAEAAAAA
+DgAAAEsCAABZAgAAGQAAABAAAAE2AnwJAAAEAyhJAAAKKgAAQlNKQgEAAQAAAAAADAAAAHY0LjAu
+MzAzMTkAAAAABQBsAAAArAcAACN+AAAYCAAAzAkAACNTdHJpbmdzAAAAAOQRAABwAQAAI1VTAFQT
+AAAQAAAAI0dVSUQAAABkEwAA5AIAACNCbG9iAAAAAAAAAAIAAAFXF6ILCQsAAAD6ATMAFgAAAQAA
+ADgAAAAJAAAADwAAABoAAAAPAAAAAQAAAEkAAAATAAAAAwAAAAQAAAAGAAAABwAAAAIAAAACAAAA
+AQAAAAYAAAABAAAAAQAAAAMAAAAAABIFAQAAAAAABgC8AzwHBgBQBDwHBgDVAikHDwCwBwAABgAC
+A6oFBgCfA6oFBgCAA6oFBgA3BKoFBgDcA6oFBgD1A6oFBgA0A6oFBgBPA6YECgAQBOABBgCdAVgF
+BgAFBzwHBgDxBVgFBgAWAlgFBgAZAzwHBgD3BDwIBgCdAjwHBgARAlgFBgCwATwHBgDpBFgFBgBI
+ADwHBgBvBjwHDgDgBa8IDgArAa8IBgBoAykHCgCvBuABEgCgBuABCgArBuABCgDjCOABBgB8CFgF
+BgC4AikHBgDABlwHBgAfBpUFFgB9AvwEFgDpAvwEFgBDAoAFBgDUBFgFBgCCAVgFBgAOBlgFGgAR
+ANAGGgABANAGgwBoCQAAGgAiANAGBgBeAVgFBgDDCaoFDgAhAfsFDgAFAsYABgBWAFgFDgC8Ba8I
+DgD4Bq8IDgDTBfsFBgBBADwIBgBSAVgFAAAAALUAAAAAAAEAAQABABAAawUAABAAAQABAAEAEACT
+BgAAdQABAAYAAQAQAMUIAACBAAEACwABABAAWggAAIUAAwAPAAEAEAD6BwAAhQAEABAAAAAQAGMH
+vweFAAUAEgAAARAAKQi/B50ABwAWAAMBEACCAAAAVQAIABkABgBaCGIBBgD6B2YBAQDTCGoBAQDT
+CGoBEQBfBW8BEQAzAnQBEQA2AXkBBgCSAn0BBgCGBoABBgAyCIQBBgBxAogBAQBcAIwBAQB0AJAB
+AQA6AJQBAQBtAJgBUCAAAAAAxgBuBAYAAQBYIAAAAADGAHkEBgABAGAgAAAAAMYAmAmfAQEAtCAA
+AAAAhgCUAaUBAgD/IAAAAACGGBwHBgADAAchAAAAAIYYHAdhAAMAEiEAAAAAhgiFBKwBBgAnIQAA
+AACGCDoFfgAGADAhAAAAAIYArwl+AAYAOCEAAAAAhgCDCH4ABgBAIQAAAACGGBwHBgAGAGAhAAAA
+AMYAPgmxAQYAhSEAAAAAxgE3CZ8BCgCYIQAAAADGAZgJnwELAJohAAAAAIYYHAe7AQwAqSEAAAAA
+hhgcB7sBDQC4IQAAAACGCHYFNgAOAN4hAAAAAIMYHAcGAA4A5iEAAAAAkwi8BsIBDgASIgAAAACT
+CBsCyAEOABkiAAAAAJMIJwLOAQ4AISIAAAAAlgiPCNUBDwAoIgAAAACGGBwHBgAPADAiAAAAAJEY
+IgfaAQ8APCIAAAAA4QFLCQYADwA0JQAAAADhAcMBGwAPAAAAAQCzCQAAAQBxAgAAAQC1BgAAAgAE
+CAAAAwA5BgAAAQC+AAAAAgCKAQAAAwC1BgAABAA5BgAAAQC1BgAAAQCzCQAAAQDpCAAAAQDpCAAA
+AQCgBAAAAQDTAQkAWQAJABwHAQARABwHBgAZABwHCgApABwHEAAxABwHEAA5ABwHEABBABwHEABJ
+ABwHEABRABwHEABZABwHEABhABwHEABpABwHBgCRABwHFQChABwHBgCxAEsJBgCxAMMBGwDhABwH
+BgARARwHBgAxARwHIQABAW4EBgABAXkEBgCZABEHMQB5AJsIBgCBAEYBNgBBAXUIOgBJAaYBQADJ
+AHYCSgDJABAJTwDJAPMEXADpABwHYQDpALUGawDpAAQIbwDxAGkCcwDpAEgFeQDpAK8JfgDpAIMI
+fgABARwHBgBBAVMIggABARgIigAJARwHBgABAe4HkABZAU8FlgABAYMJnQBhAVQJowCJAHABqgCJ
+AL8JsgAZARwHuAA5ARwHBgDRABwHEADZABwH0wCJAQEC2gBxANIE4QCZAWMC5gBxAOUE6wAJAdIE
+NgDZAGYI8AChAZME9gBxAGYG/gBxANsE/gBxALcJ/gCxAdsAXAB5ABEBfgDJAPoAAgGJAeUAFAEM
+ABEHJAEUABEBfgAUAJsIPQHBAVsCBgBxAMAENgBBAXUIQgHJAO4FSgHJAKUIBgDJAMMBGwAuAAsA
+/AEuABMABQIuABsAJAIuACMALQIuACsAVgIuADMAVgIuADsAVgIuAEMALQIuAEsAXAIuAFMAVgIu
+AFsAcwJDAGMA3AKAAGsAvQKJAJsAJAKpAJsAJALhAHMA3ALjAJMA3AIjAXMA3AJAA4sA3AIoAEUA
+wAADAAEABgADAAcABAAIAAYAAACJBN4BAAA+BeMBAAB6BecBAADABusBAAA7AvEBAACTCPcBAgAH
+AAMAAgAIAAUAAgARAAcAAgATAAkAAgAUAAsAAQAVAAsAAgAWAA0ACQAyAB8ACQA0ACEAHQEtAQSA
+AAABAAAAAAAAAAAAAAAAAJEAAAAEAAAAAAAAAAAAAABQAdIAAAAAABAAAAAAAAAAAAAAAFkB8wgA
+AAAABAAAAAAAAAAAAAAAUAHGAAAAAAAQAAAAAAAAAAAAAABZARYJAAAAAAQAAAAAAAAAAAAAAFAB
+WAUAAAAAEAAAAAAAAAAAAAAAWQFDBgAAAAAAAAAAAQAAAG0HAAAJAAIAOQBXAH8ADQF/ADMBAAAA
+SURUU1ZhcmlhYmxlMTAwAElEVFNWYXJpYWJsZXMxMDAASURUU0V2YWx1YXRvckNvbnRleHQxMDAA
+PD51X18xAFRhc2tgMQBUYXNrQXdhaXRlcmAxAEludDMyADxjb25uZWN0aW9uPjVfXzIAPD51X18y
+ADxjb21tYW5kPjVfXzMAPExvYWRUaW1lPmRfXzMAU0NfNTEyMzNmYTkwNTlmNDBkN2E0ZmI1YjA5
+OTY4ZjdiMjQAPE1vZHVsZT4ASW5wdXRJRABTeXN0ZW0uRGF0YQBtc2NvcmxpYgBPcGVuQXN5bmMA
+RXhlY3V0ZU5vblF1ZXJ5QXN5bmMAQXdhaXRVbnNhZmVPbkNvbXBsZXRlZABnZXRfSXNDb21wbGV0
+ZWQARGJDb21tYW5kAFNxbENvbW1hbmQAZGVmYXVsdEluc3RhbmNlAGdldF9NZXNzYWdlAElEaXNw
+b3NhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAENvbnNvbGUASW5wdXRO
+YW1lAExvYWRUaW1lAERhdGVUaW1lAFdyaXRlTGluZQBJQXN5bmNTdGF0ZU1hY2hpbmUAU2V0U3Rh
+dGVNYWNoaW5lAHN0YXRlTWFjaGluZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBz
+ZXRfQ29tbWFuZFR5cGUAVmFsdWVUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNl
+Q3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAFBhcnNlAEdldERhdGUAZGF0
+ZQBDcmVhdGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAPD4xX19zdGF0ZQBDb21waWxlckdlbmVyYXRl
+ZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1
+dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXN5bmNT
+dGF0ZU1hY2hpbmVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJh
+bWV3b3JrQXR0cmlidXRlAERlYnVnZ2VySGlkZGVuQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJh
+dGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVs
+YXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJp
+Z2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2Vt
+Ymx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVj
+dXRlAFBvc3RFeGVjdXRlAGdldF9EYXRlVmFsdWUAQWRkV2l0aFZhbHVlAHZhbHVlAFN5c3RlbS5S
+dW50aW1lLlZlcnNpb25pbmcAVG9TaG9ydERhdGVTdHJpbmcAVG9TdHJpbmcAZ2V0X01vbnRoAGdl
+dF9EYXlPZldlZWsAZ2V0X1Rhc2sAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzUxMjMzZmE5MDU5
+ZjQwZDdhNGZiNWIwOTk2OGY3YjI0LmRsbABnZXRfRGF0ZVZhbHVlX0lzTnVsbABnZXRfSXRlbQBT
+eXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBnZXRfTXlDb24AU3lzdGVtLkNvbmZpZ3VyYXRp
+b24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU3FsUGFyYW1ldGVyQ29s
+bGVjdGlvbgBEYkNvbm5lY3Rpb24AU3FsQ29ubmVjdGlvbgBTZXRFeGNlcHRpb24AU3lzdGVtLkRh
+dGEuQ29tbW9uAFN0cmluZ0NvbXBhcmlzb24AQ3VsdHVyZUluZm8AT3V0cHV0TmFtZU1hcABPdXRw
+dXRNYXAATWljcm9zb2Z0LlNxbFNlcnZlci5EVFNSdW50aW1lV3JhcABnZXRfWWVhcgBBc3luY1Rh
+c2tNZXRob2RCdWlsZGVyADw+dF9fYnVpbGRlcgBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIA
+U2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+UnVudGltZS5XcmFwcGVyAFNxbFBhcmFtZXRlcgBUYXNrQXdhaXRlcgBHZXRBd2FpdGVyAC5jdG9y
+AC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNl
+cwBTeXN0ZW0uUmVzb3VyY2VzAFNDXzUxMjMzZmE5MDU5ZjQwZDdhNGZiNWIwOTk2OGY3YjI0LlBy
+b3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ181MTIzM2ZhOTA1
+OWY0MGQ3YTRmYjViMDk5NjhmN2IyNC5Qcm9wZXJ0aWVzAGdldF9SZWFkT25seVZhcmlhYmxlcwBC
+dWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MAPD40X190aGlzAFN5
+c3RlbS5UaHJlYWRpbmcuVGFza3MARXF1YWxzAENvbm5lY3Rpb25zAGdldF9QYXJhbWV0ZXJzAENv
+bmNhdABPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQAR2V0UmVzdWx0AFNldFJlc3VsdABT
+eXN0ZW0uRGF0YS5TcWxDbGllbnQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0
+Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQAU3RhcnQATWljcm9zb2Z0LlNx
+bFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABNb3ZlTmV4dABHZXRWYWx1
+ZVdpdGhDb250ZXh0AFNjcmlwdENvbXBvbmVudEV2YWxDb250ZXh0AGdldF9FdmFsdWF0b3JDb250
+ZXh0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBnZXRfRGF5AGdldF9Bc3NlbWJseQAA
+R0UAcgByAG8AcgAgAHAAcgBvAGMAZQBzAGEAbgBkAG8AIABsAGEAIABmAGkAbABhACAAZABlACAA
+ZgBlAGMAaABhADoAIAAAD0kAbgBwAHUAdAAgADAAAAtNAHkAQwBvAG4AAHFTAEMAXwA1ADEAMgAz
+ADMAZgBhADkAMAA1ADkAZgA0ADAAZAA3AGEANABmAGIANQBiADAAOQA5ADYAOABmADcAYgAyADQA
+LgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAABlkAGIAbwAuAEwAbwBh
+AGQAVABpAG0AZQAAEXkAeQB5AHkATQBNAGQAZAAAE0AARgB1AGwAbABEAGEAdABlAAALQABZAGUA
+YQByAAANQABNAG8AbgB0AGgAAAlAAEQAYQB5AAAtRQByAHIAbwByACAAYQBsACAAYwBhAHIAZwBh
+AHIAIABmAGUAYwBoAGEAIAAABToAIAAAAOR12+YRKr9Mug0KhU7G1IYABCABAQgDIAABBSABARER
+BCABAQ4FIAEBEkUFIAEBElkGIAEBEYCVCAcDETkRPRJBBCAAET0DIAAOBQACDg4OBAABAQ4EBwER
+JAQAABFlBzABAQEQHgAECgERJAQgABJNCSADARJ5HQgSfQMGEnkDBh0IBSABETkIBCABAggDIAAC
+ByACAg4RgKkFIAEdCAgFIAASgK0GIAESgLEcBQAAEoC1BiABHBKAuQcAARJFEYC9BSAAEoDBByAC
+AQ4SgMESBwcIEggRXRE9FRFhAQgSQRJBBiACAQ4SaQYgAQERgMkEIAEODgQAAQgOBCAAEV0FIAAS
+gNEHIAISgNUOHAMgAAgKMAICARAeABAeAQYKAhE9ESQIIAAVEoDdAQgGFRKA3QEICCAAFRFhARMA
+BRURYQEICQoCFRFhAQgRJAQgABMABwAEDg4ODg4FIAEBEkEIt3pcVhk04IkIiYRdzYCAzJEDBhIU
+AwYSGAQGEoCBBAYSgI0EBhKAkQMGEiACBggDBhFlAwYSCAMGETkDBhJpAwYSbQMGET0GBhURYQEI
+BSABARIMBiABEk0ROQQgABE5CSAEAQgOEnkSfQYgAQESgIEFAAASgI0FAAASgJEGAAEBEoCRBAAA
+EiADAAABBCgAETkDKAACAygADgUIABKAjQUIABKAkQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFw
+Tm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ181MTIzM2ZhOTA1OWY0MGQ3YTRmYjVi
+MDk5NjhmN2IyNAAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI1AABJAQAaLk5FVEZyYW1ld29y
+ayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQu
+Nx4BABlTY3JpcHRNYWluKzxMb2FkVGltZT5kX18zAAAEAQAAAAAAALQAAADOyu++AQAAAJEAAABs
+U3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAu
+MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3Rl
+bS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABsPAAA
+AAAAAAAAAACGPAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeDwAAAAAAAAAAAAAAABfQ29yRGxs
+TWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+EAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABY
+QAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E
+7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBW
+AGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAA
+AACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAAMAA0
+AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4A
+YQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBD
+AF8ANQAxADIAMwAzAGYAYQA5ADAANQA5AGYANAAwAGQANwBhADQAZgBiADUAYgAwADkAOQA2ADgA
+ZgA3AGIAMgA0AAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAALgAw
+AAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwA1ADEAMgAzADMAZgBhADkA
+MAA1ADkAZgA0ADAAZAA3AGEANABmAGIANQBiADAAOQA5ADYAOABmADcAYgAyADQALgBkAGwAbAAA
+AEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAA
+QAAgACAAMgAwADIANQAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAAAAAA
+AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADUAMQAyADMA
+MwBmAGEAOQAwADUAOQBmADQAMABkADcAYQA0AGYAYgA1AGIAMAA5ADkANgA4AGYANwBiADIANAAu
+AGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA1ADEAMgAzADMA
+ZgBhADkAMAA1ADkAZgA0ADAAZAA3AGEANABmAGIANQBiADAAOQA5ADYAOABmADcAYgAyADQAAAA0
+AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEA
+QQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAJg8AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_51233fa9059f40d7a4fb5b09968f7b24</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">User::MyCon</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">2C</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Time\Load Time Data.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Time\Load Time Data.Inputs[Input 0].Columns[DateValue]"
+                      cachedDataType="dbDate"
+                      cachedName="DateValue"
+                      lineageId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB].Columns[DateValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Time\Load Time Data.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Load Time\Load Time Data.Inputs[Input 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Time.Paths[Salida de origen de OLE DB]"
+              endId="Package\Load Time\Load Time Data.Inputs[Input 0]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Load Time\Get Time Data.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2683,6 +3764,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\Clean Data"
+          TopLeft="130.624994160608,68.4210518803293" />
+        <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\Load Categories"
           TopLeft="124.999994412065,151.894735174331" />
@@ -2701,15 +3786,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="148,42.6666666666667"
           Id="Package\Load Shippers"
-          TopLeft="128.124994272366,426.68420680763" />
+          TopLeft="123.124994495883,430.78946992045" />
         <NodeLayout
           Size="130.666666666667,42.6666666666667"
           Id="Package\Load Time"
           TopLeft="134.99999396503,501.473680153779" />
-        <NodeLayout
-          Size="133.333333333334,42.6666666666667"
-          Id="Package\Clean Data"
-          TopLeft="130.624994160608,68.4210518803293" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="203.354161092701,194.561401840998">
@@ -2800,18 +3881,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="203.687494202517,399.526311995663">
+          TopLeft="205.249994132668,399.526311995663">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.1578948119669"
+              EndConnector="-8.12499963678499,31.2631579247873"
               Start="0,0"
-              End="0,19.6578948119669">
+              End="-8.12499963678499,23.7631579247873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.6578948119669" />
+                    End="0,11.6315789623937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6315789623937"
+                    Point2="0,15.6315789623937"
+                    Point3="-4,15.6315789623937" />
+                  <mssgle:LineSegment
+                    End="-4.12499963678499,15.6315789623937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.12499963678499,15.6315789623937"
+                    Point2="-8.12499963678499,15.6315789623937"
+                    Point3="-8.12499963678499,19.6315789623937" />
+                  <mssgle:LineSegment
+                    End="-8.12499963678499,23.7631579247873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2822,18 +3915,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="201.229160785365,469.350873474297">
+          TopLeft="198.729160897123,473.456136587117">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.1228066794818"
+              EndConnector="0,28.0175435666624"
               Start="0,0"
-              End="0,24.6228066794818">
+              End="0,20.5175435666624">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.6228066794818" />
+                    End="0,20.5175435666624" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2907,7 +4000,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           TopLeft="240.624989243225,38.9999995717877" />
         <NodeLayout
           Size="182.666666666667,42.6666666666667"
-          Id="Package\Load Customers\Comando de OLE DB"
+          Id="Package\Load Customers\Load Customers Data"
           TopLeft="238.749989327044,138.894735317069" />
         <EdgeLayout
           Id="Package\Load Customers.Paths[Salida de origen de OLE DB]"
@@ -2915,140 +4008,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.2280690786141"
+              EndConnector="0,57.2280690786147"
               Start="0,0"
-              End="0,49.7280690786141">
+              End="0,49.7280690786147">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.7280690786141" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Load Employees">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177.333333333334,42.6666666666667"
-          Id="Package\Load Employees\Get Employees Data"
-          TopLeft="313.999990642071,83.999997496605" />
-        <NodeLayout
-          Size="182.666666666667,42.6666666666667"
-          Id="Package\Load Employees\Comando de OLE DB"
-          TopLeft="305.71427660329,169.999994933605" />
-        <EdgeLayout
-          Id="Package\Load Employees.Paths[Salida de origen de OLE DB]"
-          TopLeft="399.857133622681,126.666664163272">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.3333307703338"
-              Start="0,0"
-              End="0,35.8333307703338">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.8333307703338" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Load Products">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="182.666666666667,42.6666666666667"
-          Id="Package\Load Products\Comando de OLE DB"
-          TopLeft="389.999988377095,233.999993026257" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Products\Get Products Data"
-          TopLeft="391.99998831749,143.999995708466" />
-        <EdgeLayout
-          Id="Package\Load Products.Paths[Salida de origen de OLE DB]"
-          TopLeft="478.333321680626,186.666662375132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.3333306511244"
-              Start="0,0"
-              End="0,39.8333306511244">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.8333306511244" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Load Shippers">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Load Shippers\Get Shippers Data"
-          TopLeft="418.999987512827,137.99999588728" />
-        <NodeLayout
-          Size="182.666666666667,42"
-          Id="Package\Load Shippers\Comando de OLE DB"
-          TopLeft="423.999987363816,229.999993145466" />
-        <EdgeLayout
-          Id="Package\Load Shippers.Paths[Salida de origen de OLE DB]"
-          TopLeft="502.333320846161,180.666662553946">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.9999998509883,49.3333305915197"
-              Start="0,0"
-              End="12.9999998509883,41.8333305915197">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6666652957599" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.6666652957599"
-                    Point2="0,24.6666652957599"
-                    Point3="4,24.6666652957599" />
-                  <mssgle:LineSegment
-                    End="8.99999985098833,24.6666652957599" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.99999985098833,24.6666652957599"
-                    Point2="12.9999998509883,24.6666652957599"
-                    Point3="12.9999998509883,28.6666652957599" />
-                  <mssgle:LineSegment
-                    End="12.9999998509883,41.8333305915197" />
+                    End="0,49.7280690786147" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3073,6 +4040,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Employees">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\Load Employees\Get Employees Data"
+          TopLeft="313.999990642071,83.999997496605" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Load Employees\Load Employees Data"
+          TopLeft="305.71427660329,169.999994933605" />
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Salida de origen de OLE DB]"
+          TopLeft="400.190466956014,126.666664163272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3333307703333"
+              Start="0,0"
+              End="0,35.8333307703333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8333307703333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load Employees\Get Employees Data">
     <Properties>
@@ -3086,6 +4091,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Products">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Products\Get Products Data"
+          TopLeft="391.99998831749,143.999995708466" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Load Products\Load Products Data"
+          TopLeft="389.999988377095,233.999993026257" />
+        <EdgeLayout
+          Id="Package\Load Products.Paths[Salida de origen de OLE DB]"
+          TopLeft="475.999988347293,186.666662375133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.3333306511243"
+              Start="0,0"
+              End="0,39.8333306511243">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8333306511243" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load Products\Get Products Data">
     <Properties>
@@ -3099,8 +4142,109 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Shippers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Load Shippers\Get Shippers Data"
+          TopLeft="418.999987512827,137.99999588728" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Load Shippers\Load Shippers Data"
+          TopLeft="423.999987363816,229.999993145466" />
+        <EdgeLayout
+          Id="Package\Load Shippers.Paths[Salida de origen de OLE DB]"
+          TopLeft="502.33332084616,180.666662553947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.33333318432244,49.3333305915193"
+              Start="0,0"
+              End="8.33333318432244,41.8333305915193">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6666652957597" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6666652957597"
+                    Point2="0,24.6666652957597"
+                    Point3="4,24.6666652957597" />
+                  <mssgle:LineSegment
+                    End="4.33333318432244,24.6666652957597" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.33333318432244,24.6666652957597"
+                    Point2="8.33333318432244,24.6666652957597"
+                    Point3="8.33333318432244,28.6666652957597" />
+                  <mssgle:LineSegment
+                    End="8.33333318432244,41.8333305915193" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Load Shippers\Get Shippers Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Time">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Load Time\Get Time Data"
+          TopLeft="195.249996546656,139.473678688759" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Load Time\Load Time Data"
+          TopLeft="188.124991590157,235.368418468333" />
+        <EdgeLayout
+          Id="Package\Load Time.Paths[Salida de origen de OLE DB]"
+          TopLeft="268.02082740174,182.140345355426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.2280731129073"
+              Start="0,0"
+              End="0,45.7280731129073">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7280731129073" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Time\Get Time Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
